@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Info{% endblock %}
+
+{% block content %}
+
+<h2 class="page-title">Information</h2>
+
+<div class="info-container">
+    <p>
+        This web app was created with inspiration from the Bloomberg terminal.
+    </p>
+
+    <h3 class="section-title">Useful tickers</h3>
+
+    <p>
+        In the search bar you can also search for indices and government bonds using their
+        appropriate ticker symbols.
+    </p>
+
+    <table class="terminal-table">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Ticker</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>S&P 500</td>
+                <td><a href="/?ticker=^GSPC" class="ticker-link">^GSPC</a></td>
+                <td>US Large-Cap Equity Index</td>
+            </tr>
+            <tr>
+                <td>Dow Jones Industrial Average</td>
+                <td><a href="/?ticker=^DJI" class="ticker-link">^DJI</a></td>
+                <td>30 US Blue-Chip Stocks</td>
+            </tr>
+            <tr>
+                <td>NASDAQ Composite</td>
+                <td><a href="/?ticker=^IXIC" class="ticker-link">^IXIC</a></td>
+                <td>Tech-Heavy US Index</td>
+            </tr>
+            <tr>
+                <td>Russell 2000</td>
+                <td><a href="/?ticker=^RUT" class="ticker-link">^RUT</a></td>
+                <td>US Small-Cap Index</td>
+            </tr>
+            <tr>
+                <td>OSEBX</td>
+                <td><a href="/?ticker=^OSEAX" class="ticker-link">^OSEAX</a></td>
+                <td>Oslo Børs Benchmark Index</td>
+            </tr>
+            <tr>
+                <td>US10Y</td>
+                <td><a href="/?ticker=^TNX" class="ticker-link">^TNX</a></td>
+                <td>CBOE Interest Rate 10 Year T No</td>
+            </tr>
+            <tr>
+                <td>VIX</td>
+                <td><a href="/?ticker=^VIX" class="ticker-link">^VIX</a></td>
+                <td>CBOE Volatility Index</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}

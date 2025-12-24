@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Terminal {% block title %}{% endblock %}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Top navigation bar -->
+    <nav id="top-navbar">
+        <div class="navbar-left">
+            <a href="/" class="terminal-name">Terminal.</a>
+        </div>
+
+        <div class="navbar-center">
+            <a href="/information" class="nav-link">Info</a>
+        </div>
+
+        <div class="navbar-right"></div>
+    </nav>
+
+    <!-- Main content -->
+    <main id="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <span>Data source: Yahoo Finance</span>
+    </footer>
+
+    <!-- JS -->
+    <script src="/static/main.js"></script>
+
+</body>
+</html>

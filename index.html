@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Stocks{% endblock %}
+
+{% block content %}
+
+<div id="welcome-state">
+    <div class="welcome-title">Welcome to Terminal.</div>
+    <div class="welcome-subtitle">
+        > Enter ticker symbol (e.g. AAPL, MSFT, ^GSPC)
+    </div>
+</div>
+
+<!-- Search bar -->
+<div class="search-container">
+    <input
+        id="search-input"
+        type="text"
+        placeholder="Ticker"
+        autocomplete="off"
+        autofocus
+    >
+    <button id="search-button" class="button">GO</button>
+</div>
+
+<!-- Error message -->
+<div id="error-message" class="error-message" style="display: none;"></div>
+
+<!-- Company info -->
+<div id="company-container">
+    <div id="info"></div>
+
+    <!-- Price bar -->
+    <div id="price-bar" class="price-bar" style="display: none;">
+        <span id="current-price"></span>
+        <span id="price-change"></span>
+    </div>
+
+    <div class="chart-metrics-container">
+        <div id="chart-container">
+            <canvas id="chart"></canvas>
+        </div>
+
+        <div id="metrics-panel" style="display: none;">
+            <div id="metrics-container"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Download section (hidden until search) -->
+<div id="download-container" style="display: none;">
+    <div id="download-title" class="download-title">
+        Download historical data
+    </div>
+
+    <div class="download-controls">
+        <select id="freq">
+            <option value="">Frequency</option>
+            <option value="daily">Daily</option>
+            <option value="weekly">Weekly</option>
+            <option value="monthly">Monthly</option>
+            <option value="quarterly">Quarterly</option>
+        </select>
+
+        <input
+            id="years"
+            type="number"
+            placeholder="Years"
+            min="1"
+            max="20"
+        >
+
+        <button
+            id="download-button"
+            class="button"
+            disabled
+            onclick="download()"
+        >
+            Download CSV
+        </button>
+    </div>
+
+    <div id="download-loading" class="download-loading" style="display: none;">
+        Preparing CSV…
+    </div>
+</div>
+
+<!-- News section -->
+<div id="news-container" style="display: none;">
+    <div class="news-title">Latest News</div>
+    <ul id="news-list"></ul>
+</div>
+
+{% endblock %}
